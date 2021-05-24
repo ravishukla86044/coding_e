@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #cont {
+        margin: 20px;
+      }
+      #left {
+        height: 500px;
+        width: 25%;
+        border: 2px solid gray;
+        float: left;
+        padding: 20px;
+      }
+      #left > form input {
+        margin: 10px;
+        color: black;
+        font-weight: bold;
+        padding: 2px 12px;
+        border: 1px solid black;
+      }
+      #left > button {
+        color: aqua;
+        margin: 15px 10px;
+        width: 120px;
+        height: 25px;
+        background: white;
+        border: 1px solid black;
+      }
+      #right {
+        height: 500px;
+        width: 64%;
+        border: 2px solid gray;
+        float: left;
+        padding: 20px 40px;
+        border-left: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      #right > div {
+        flex-basis: 17%;
+        height: 150px;
+        outline: 1px solid black;
+        margin: 20px 63px;
+        margin-bottom: 80px;
+      }
+      #right > div > button {
+        width: 61px;
+        height: 20px;
+        margin: 8px 4px;
+        position: relative;
+        top: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cont">
+      <div id="left">
+        <form>
+          <input type="text" id="Name" class="su" value="Name" />
+          <input type="text" id="Price" class="su" placeholder="Price" value="Price" />
+          <input
+            type="text"
+            id="Discription"
+            class="su"
+            placeholder="Discription"
+            value="Discription"
+          />
+          <input type="number" id="est" class="su" placeholder="Estimated Delivery" value="0" />
+          <input
+            type="url"
+            id="image"
+            alt="img"
+            src=""
+            style="width: 168px"
+            placeholder="Image url"
+          />
+        </form>
+        <button id="add">Add Product</button>
+      </div>
+      <div id="right"></div>
+    </div>
+  </body>
+</html>
+<script>
+  var btn = document.getElementById("add");
+  var i = 1;
+  var arr = [];
+  btn.addEventListener("click", addproduct);
+  function addproduct() {
+    var name = document.getElementById("Name").value;
+    var price = document.getElementById("Price").value;
+    var dis = document.getElementById("Discription").value;
+    var est = document.getElementById("est").value;
+    var img = document.getElementById("image").value;
+
+    var ob = {
+      Name: name,
+      Price: price,
+      Discription: dis,
+      Estimate_Delivery: est,
+      Img: img,
+    };
+    arr.push(ob);
+    console.log(arr);
+
+    var rigth = document.getElementById("right");
+    var temp = document.createElement("div");
+    var bt1 = document.createElement("button");
+    bt1.innerText = "Remove";
+    // bt1.setAttribute("id", "remove");
+    // bt1.addEventListener("click", remove);
+    var bt2 = document.createElement("button");
+    bt2.innerText = "Update";
+    // bt2.setAttribute("id", "update");
+    // bt1.addEventListener("click", update);
+    right.append(temp);
+    temp.append(bt1, bt2);
+    i++;
+  }
+  //   function remove(e){
+  //     var a=
+
+  //   }
+</script>
